@@ -23,7 +23,7 @@ a full-file copy-up into the SQLite delta, giving an availability impact.
 
 - **High 7.7** — `CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H`
 - **9.1** if `--bind` exposes the port off-loopback (`AV:N/…/A:H`)
-- **6.1** conservative without availability (`…/C:H/I:N/A:N`)
+- **6.2** conservative without availability (`…/C:H/I:N/A:N`)
 
 ## What is proven (v0.6.4 tag source)
 
@@ -32,7 +32,7 @@ a full-file copy-up into the SQLite delta, giving an availability impact.
 - `LOOKUP /` + `READDIR` → host root enumeration; `/home`, `/tmp` listable
 - `LOOKUP .agentfs/v064poc.db-wal` → AgentFS DB/WAL markers recovered
 - 1-byte READ of 128 MB sparse file → RSS 66→551 MB, DB+WAL +464 MB in 0.9 s
-- 1-byte READ of 1 TB sparse file → ~50 GB RSS → kernel OOM-killed `agentfs`
+- 1-byte READ of 1 TB sparse file → ~51.5 GB RSS → kernel OOM-killed the `ss`-identified `agentfs` listener PID
 - WRITE/MKDIR/REMOVE on traversed paths → delta-only; host unchanged
 
 ## Repo layout

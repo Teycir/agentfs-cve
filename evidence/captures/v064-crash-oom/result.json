@@ -1,5 +1,5 @@
 {
-  "started_utc": "2026-11-23T19:53:51.314940Z",
+  "started_utc": "2026-11-23T20:05:57.340105Z",
   "host": "127.0.0.1",
   "port": 11112,
   "name": "../crash_sparse.bin",
@@ -17,21 +17,34 @@
     },
     {
       "proc": "READ",
-      "elapsed_sec": 39.311,
+      "elapsed_sec": 17.895,
       "error": "EOFError: connection closed after 0/4 bytes"
     }
   ],
   "server_pids_before": [
-    115679,
-    115681,
-    115800
+    118453,
+    118454
   ],
-  "server_pid_before": 115679,
+  "listener_before": {
+    "found": true,
+    "host": "127.0.0.1",
+    "port": 11112,
+    "local": "127.0.0.1:11112",
+    "pid": 118454,
+    "ss_line": "LISTEN 0      4096       127.0.0.1:11112 0.0.0.0:* users:((\"agentfs\",pid=118454,fd=13))",
+    "cmdline": "/tmp/agentfs-v064/cli/target/release/agentfs serve nfs v064poc --bind 127.0.0.1 --port 11112",
+    "ppid": 118453
+  },
+  "server_pid_before": 118454,
   "port_open_before": true,
-  "server_pids_after": [
-    115800
-  ],
+  "server_pids_after": [],
+  "listener_after": {
+    "found": false,
+    "host": "127.0.0.1",
+    "port": 11112
+  },
   "server_pid_after_alive": false,
+  "listener_pid_after_alive": false,
   "new_server_pids": [],
   "port_open_after": false,
   "functional_probes": [
@@ -39,5 +52,13 @@
       "mnt": "ConnectionRefusedError: [Errno 111] Connection refused"
     }
   ],
-  "finished_utc": "2026-11-23T19:54:33.727543Z"
+  "oom_events": {
+    "available": true,
+    "events": [
+      "nov. 23 21:06:13 teycir-G5-KF5 kernel: [ 118454]  1000 118454 268994812 12883334 12883132      202         0 103538688        0           200 agentfs",
+      "nov. 23 21:06:13 teycir-G5-KF5 kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=user.slice,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-bc38c550-a47a-4141-8ed9-5652319a1e69.scope,task=agentfs,pid=118454,uid=1000",
+      "nov. 23 21:06:13 teycir-G5-KF5 kernel: Out of memory: Killed process 118454 (agentfs) total-vm:1075979248kB, anon-rss:51532528kB, file-rss:808kB, shmem-rss:0kB, UID:1000 pgtables:101112kB oom_score_adj:200"
+    ]
+  },
+  "finished_utc": "2026-11-23T20:06:18.704702Z"
 }

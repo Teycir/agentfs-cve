@@ -1,0 +1,35 @@
+AgentFS v0.6.4 tag-source test environment
+==========================================
+
+UTC: 2026-11-23T20:07:02Z
+Host: Linux teycir-G5-KF5 6.14.0-37-generic #37~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 10:25:38 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+
+Source checkout:
+  path: /tmp/agentfs-v064
+  commit: 3a5ed2b88e5d5a5f9b2c7fe02d012b50fd19e3c0 (tag v0.6.4)
+  git status:
+   M cli/Cargo.lock
+   M cli/Cargo.toml
+  ?? vendor/
+  Note: modifications are the documented build-only dependency patch;
+  no agentfs security-relevant source file is modified.
+
+Build:
+  patch: cve-submission/build-patch-v064.diff
+  patch sha256: d83274acc8bca9dc6f7110ce5fdcfe00f27fb0362e2c06010aef6536d805b16c
+  command: cd cli && cargo +stable build --release --no-default-features
+  toolchain: rustc 1.95.0 (59807616e 2026-04-14), cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+
+Binary:
+  path: /tmp/agentfs-v064/cli/target/release/agentfs
+  version output: agentfs v0.6.4-dirty
+  sha256: 8abbf5f926f358739f0b600e185f6efd425eaaa89c07b0b2b573b44d2b16c0c4
+
+Runtime used for v064 captures:
+  cwd: /tmp/opencode-v064
+  command: /tmp/agentfs-v064/cli/target/release/agentfs serve nfs v064poc --bind 127.0.0.1 --port 11112
+  base export: /tmp/opencode-v064/lab/base
+  database: /tmp/opencode-v064/.agentfs/v064poc.db (+ WAL/SHM)
+
+Earlier environment.txt records the separate 0a014eb-dirty build used for the
+initial dirty-tree captures; it is not the v0.6.4 tag-source environment.

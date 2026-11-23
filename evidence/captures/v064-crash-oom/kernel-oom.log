@@ -1,15 +1,9 @@
-nov. 23 20:40:25 teycir-G5-KF5 kernel: [   2230]   990  2230     4393      404      162      242         0    77824       64          -900 systemd-oomd
-nov. 23 20:40:25 teycir-G5-KF5 kernel: [ 111165]  1000 111165 268994812 12562114 12562102       12         0 103112704   257792           200 agentfs
-nov. 23 20:40:25 teycir-G5-KF5 kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=avahi-daemon.service,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-bc38c550-a47a-4141-8ed9-5652319a1e69.scope,task=agentfs,pid=111165,uid=1000
-nov. 23 20:40:25 teycir-G5-KF5 kernel: Out of memory: Killed process 111165 (agentfs) total-vm:1075979248kB, anon-rss:50248408kB, file-rss:48kB, shmem-rss:0kB, UID:1000 pgtables:100696kB oom_score_adj:200
-nov. 23 20:40:27 teycir-G5-KF5 kernel: oom_reaper: reaped process 111165 (agentfs), now anon-rss:16kB, file-rss:48kB, shmem-rss:0kB
-nov. 23 20:54:29 teycir-G5-KF5 kernel: systemd invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=0
-nov. 23 20:54:29 teycir-G5-KF5 kernel:  oom_kill_process+0x118/0x280
-nov. 23 20:54:29 teycir-G5-KF5 kernel:  ? oom_evaluate_task+0x155/0x1e0
-nov. 23 20:54:29 teycir-G5-KF5 kernel:  __alloc_pages_may_oom+0x10b/0x1d0
-nov. 23 20:54:29 teycir-G5-KF5 kernel: [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
-nov. 23 20:54:29 teycir-G5-KF5 kernel: [   2230]   990  2230     4393      351      162      189         0    77824       64          -900 systemd-oomd
-nov. 23 20:54:29 teycir-G5-KF5 kernel: [ 115681]  1000 115681 268994812 12769320 12769268       52         0 102617088        0           200 agentfs
-nov. 23 20:54:29 teycir-G5-KF5 kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=init.scope,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-bc38c550-a47a-4141-8ed9-5652319a1e69.scope,task=agentfs,pid=115681,uid=1000
-nov. 23 20:54:29 teycir-G5-KF5 kernel: Out of memory: Killed process 115681 (agentfs) total-vm:1075979248kB, anon-rss:51077072kB, file-rss:208kB, shmem-rss:0kB, UID:1000 pgtables:100212kB oom_score_adj:200
-nov. 23 20:54:30 teycir-G5-KF5 kernel: oom_reaper: reaped process 115681 (agentfs), now anon-rss:96kB, file-rss:208kB, shmem-rss:0kB
+nov. 23 21:06:13 teycir-G5-KF5 kernel: .kilo invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=200
+nov. 23 21:06:13 teycir-G5-KF5 kernel:  oom_kill_process+0x118/0x280
+nov. 23 21:06:13 teycir-G5-KF5 kernel:  __alloc_pages_may_oom+0x10b/0x1d0
+nov. 23 21:06:13 teycir-G5-KF5 kernel:  __alloc_pages_slowpath.constprop.0+0x5f4/0x970
+nov. 23 21:06:13 teycir-G5-KF5 kernel: [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+nov. 23 21:06:13 teycir-G5-KF5 kernel: [ 118454]  1000 118454 268994812 12883334 12883132      202         0 103538688        0           200 agentfs
+nov. 23 21:06:13 teycir-G5-KF5 kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=user.slice,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.gnome.Terminal.slice/vte-spawn-bc38c550-a47a-4141-8ed9-5652319a1e69.scope,task=agentfs,pid=118454,uid=1000
+nov. 23 21:06:13 teycir-G5-KF5 kernel: Out of memory: Killed process 118454 (agentfs) total-vm:1075979248kB, anon-rss:51532528kB, file-rss:808kB, shmem-rss:0kB, UID:1000 pgtables:101112kB oom_score_adj:200
+nov. 23 21:06:15 teycir-G5-KF5 systemd-journald[1079]: Under memory pressure, flushing caches.
