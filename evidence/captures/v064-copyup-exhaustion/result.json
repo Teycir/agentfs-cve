@@ -1,0 +1,28 @@
+{
+  "started_utc": "2026-11-23T19:16:57.890469Z",
+  "name": "../big_sparse.bin",
+  "read_count": 1,
+  "db_bytes_before": 1170088,
+  "rss_kb_before": 66196,
+  "samples": [
+    199320,
+    209496,
+    209496,
+    211544,
+    211544,
+    211544,
+    213592,
+    234072,
+    481880,
+    551256,
+    551256,
+    547004
+  ],
+  "file_size": 134217728,
+  "read_status": 0,
+  "elapsed_sec": 0.896,
+  "rss_kb_after": 547004,
+  "rss_kb_peak": 551256,
+  "db_bytes_after": 465591240,
+  "finished_utc": "2026-11-23T19:16:58.889037Z"
+}

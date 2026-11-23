@@ -1,0 +1,4 @@
+{"id":1,"jsonrpc":"2.0","result":{"capabilities":{"resources":{},"tools":{}},"protocolVersion":"2024-11-05","serverInfo":{"name":"agentfs-mcp-server","version":"0.6.4"}}}
+{"id":2,"jsonrpc":"2.0","result":{"tools":[{"description":"Read file contents from the filesystem","inputSchema":{"properties":{"encoding":{"description":"Encoding to use for file contents (default: utf8)","enum":["utf8","base64"],"type":"string"},"path":{"description":"Path to the file to read","type":"string"}},"required":["path"],"type":"object"},"name":"read_file"}]}}
+{"id":3,"jsonrpc":"2.0","result":{"content":[{"text":"Wrote 20 bytes to /mcp_bypass_probe2.txt","type":"text"}]}}
+{"id":4,"jsonrpc":"2.0","result":{"content":[{"text":"MCP-BYPASS-CONFIRMED","type":"text"}]}}

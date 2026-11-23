@@ -1,0 +1,8 @@
+Using agent: labpoc
+Tool filter enabled. Exposing tools: {"read_file"}
+Starting MCP server on stdio...
+Protocol: Model Context Protocol (MCP) over JSON-RPC 2.0
+Received request: method=initialize
+Received request: method=tools/list
+Received request: method=tools/call
+Received request: method=tools/call

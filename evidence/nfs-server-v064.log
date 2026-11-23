@@ -1,0 +1,12 @@
+Mode: overlay (base: /tmp/opencode-v064/lab/base)
+
+AgentFS NFS Server
+  Database: .agentfs/v064poc.db
+  Listening: 127.0.0.1:11112
+  Export: /
+
+Mount from client:
+  mount -t nfs -o vers=3,tcp,port=11112,mountport=11112,nolock 127.0.0.1:/ /mnt
+
+Press Ctrl+C to stop.
+

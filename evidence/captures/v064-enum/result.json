@@ -1,0 +1,346 @@
+{
+  "started_utc": "2026-11-23T19:16:34.790789Z",
+  "host": "127.0.0.1",
+  "port": 11112,
+  "uid": 0,
+  "gid": 0,
+  "listings": [
+    {
+      "path": "/",
+      "status": 0,
+      "eof": true,
+      "entries": [
+        {
+          "name": ".package-cache-mutate",
+          "fileid": 7
+        },
+        {
+          "name": "_data_temp",
+          "fileid": 8
+        },
+        {
+          "name": "bin",
+          "fileid": 9
+        },
+        {
+          "name": "bin.usr-is-merged",
+          "fileid": 10
+        },
+        {
+          "name": "boot",
+          "fileid": 11
+        },
+        {
+          "name": "cdrom",
+          "fileid": 12
+        },
+        {
+          "name": "data",
+          "fileid": 13
+        },
+        {
+          "name": "dev",
+          "fileid": 14
+        },
+        {
+          "name": "etc",
+          "fileid": 15
+        },
+        {
+          "name": "home",
+          "fileid": 16
+        },
+        {
+          "name": "lib",
+          "fileid": 17
+        },
+        {
+          "name": "lib.usr-is-merged",
+          "fileid": 18
+        },
+        {
+          "name": "lib32",
+          "fileid": 19
+        },
+        {
+          "name": "lib64",
+          "fileid": 20
+        },
+        {
+          "name": "lost+found",
+          "fileid": 21
+        },
+        {
+          "name": "media",
+          "fileid": 22
+        },
+        {
+          "name": "mnt",
+          "fileid": 23
+        },
+        {
+          "name": "opt",
+          "fileid": 24
+        },
+        {
+          "name": "proc",
+          "fileid": 25
+        },
+        {
+          "name": "quarantine",
+          "fileid": 26
+        },
+        {
+          "name": "root",
+          "fileid": 27
+        },
+        {
+          "name": "run",
+          "fileid": 28
+        },
+        {
+          "name": "sbin",
+          "fileid": 29
+        },
+        {
+          "name": "sbin.usr-is-merged",
+          "fileid": 30
+        },
+        {
+          "name": "snap",
+          "fileid": 31
+        },
+        {
+          "name": "srv",
+          "fileid": 32
+        },
+        {
+          "name": "swap.img",
+          "fileid": 33
+        },
+        {
+          "name": "sys",
+          "fileid": 34
+        },
+        {
+          "name": "timeshift",
+          "fileid": 35
+        },
+        {
+          "name": "tmp",
+          "fileid": 36
+        },
+        {
+          "name": "usr",
+          "fileid": 37
+        },
+        {
+          "name": "var",
+          "fileid": 38
+        }
+      ]
+    },
+    {
+      "path": "/home",
+      "status": 0,
+      "eof": true,
+      "entries": [
+        {
+          "name": "linuxbrew",
+          "fileid": 39
+        },
+        {
+          "name": "teycir",
+          "fileid": 40
+        }
+      ]
+    },
+    {
+      "path": "/tmp",
+      "status": 0,
+      "eof": true,
+      "entries": [
+        {
+          "name": ".9afbfebde3ffefbf-00000001.so",
+          "fileid": 41
+        },
+        {
+          "name": ".9afbfebde7f2efdf-00000000.so",
+          "fileid": 42
+        },
+        {
+          "name": ".ICE-unix",
+          "fileid": 43
+        },
+        {
+          "name": ".X11-unix",
+          "fileid": 44
+        },
+        {
+          "name": ".XIM-unix",
+          "fileid": 45
+        },
+        {
+          "name": ".bcfbf79ffecff3bf-00000002.so",
+          "fileid": 46
+        },
+        {
+          "name": ".bun-1000-71b650bef1b3e52c.node",
+          "fileid": 47
+        },
+        {
+          "name": ".bun-1000-73b412e2ff3bc470.so",
+          "fileid": 48
+        },
+        {
+          "name": ".bun-1000-89812e6e6a68aaeb.so",
+          "fileid": 49
+        },
+        {
+          "name": ".font-unix",
+          "fileid": 50
+        },
+        {
+          "name": "E3Aq2pMaAez7tO8tXaa9m+JOIyXiJ09kEsSRQWycjCE=",
+          "fileid": 51
+        },
+        {
+          "name": "agentfs-v064",
+          "fileid": 52
+        },
+        {
+          "name": "devin-overflows-1000",
+          "fileid": 53
+        },
+        {
+          "name": "gdm3-config-err-mAQzUw",
+          "fileid": 54
+        },
+        {
+          "name": "kilo",
+          "fileid": 55
+        },
+        {
+          "name": "node-compile-cache",
+          "fileid": 56
+        },
+        {
+          "name": "oh-my-opencode.log",
+          "fileid": 57
+        },
+        {
+          "name": "opencode",
+          "fileid": 58
+        },
+        {
+          "name": "opencode-v064",
+          "fileid": 59
+        },
+        {
+          "name": "org.chromium.Chromium.Ib5EfC",
+          "fileid": 60
+        },
+        {
+          "name": "qipc_sharedmemory_EAqpMaAeztOtXaamJOIyXiJkEsSRQWycjCEa8d14b801c313b46d7c537d414a6d5cf5842857e",
+          "fileid": 61
+        },
+        {
+          "name": "qipc_systemsem_EAqpMaAeztOtXaamJOIyXiJkEsSRQWycjCEa8d14b801c313b46d7c537d414a6d5cf5842857e",
+          "fileid": 62
+        },
+        {
+          "name": "snap-private-tmp",
+          "fileid": 63
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-ModemManager.service-LLuu5P",
+          "fileid": 64
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-bluetooth.service-H0CvN4",
+          "fileid": 65
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-colord.service-JhextT",
+          "fileid": 66
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-fwupd.service-uN9TjV",
+          "fileid": 67
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-polkit.service-FMdi4u",
+          "fileid": 68
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-power-profiles-daemon.service-V7U9cS",
+          "fileid": 69
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-shutdownos.service-g8svDr",
+          "fileid": 70
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-switcheroo-control.service-v2CHeZ",
+          "fileid": 71
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-systemd-logind.service-QQ2iYl",
+          "fileid": 72
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-systemd-oomd.service-ECQB9h",
+          "fileid": 73
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-systemd-resolved.service-XkKDjp",
+          "fileid": 74
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-systemd-timesyncd.service-ZbJncU",
+          "fileid": 75
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-tor@default.service-vRhqOl",
+          "fileid": 76
+        },
+        {
+          "name": "systemd-private-ec457021154d4cab9466f3c35b878e16-upower.service-CGWoS9",
+          "fileid": 77
+        },
+        {
+          "name": "trae-agent-toolhost-1000",
+          "fileid": 78
+        },
+        {
+          "name": "uv-ee34e3ef6815c77c.lock",
+          "fileid": 79
+        }
+      ]
+    },
+    {
+      "path": "/tmp/opencode/agentfs-lab",
+      "status": 0,
+      "eof": true,
+      "entries": [
+        {
+          "name": "base",
+          "fileid": 81
+        },
+        {
+          "name": "esc_target.txt",
+          "fileid": 82
+        },
+        {
+          "name": "outside_secret.txt",
+          "fileid": 83
+        },
+        {
+          "name": "secret_600.txt",
+          "fileid": 84
+        }
+      ]
+    }
+  ],
+  "finished_utc": "2026-11-23T19:16:34.806012Z"
+}

@@ -1,0 +1,12 @@
+{
+  "started_utc": "2026-11-23T19:16:49.622115Z",
+  "db_path": "/tmp/opencode-v064/.agentfs/v064poc.db-wal",
+  "db_size": 527392,
+  "markers": {
+    "V064-INSIDE-BASE-FILE": 238970,
+    "V064-OUTSIDE-SECRET": 276023,
+    "V064-MODE600-SECRET": 375046,
+    "root:x:0:0:root": 337995
+  },
+  "finished_utc": "2026-11-23T19:16:49.622130Z"
+}

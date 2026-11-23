@@ -1,0 +1,107 @@
+{
+  "started_utc": "2026-11-23T19:15:05.174217Z",
+  "host": "127.0.0.1",
+  "port": 11112,
+  "auth_unix_uid": 0,
+  "auth_unix_gid": 0,
+  "lookup_name": "inside.txt",
+  "read_count": 64,
+  "steps": [
+    {
+      "proc": "MNT",
+      "status": 0,
+      "root_fh": "5753d509a20100000100000000000000",
+      "request_sha256": "3f632cb047c6172c166f656a7d065dbff77cf87941312c097a4e1d360ebea84f",
+      "response_sha256": "86987d20f77c845da97b09fe84886da3fd2f1eff774b3891f99e8baec5b27a50"
+    },
+    {
+      "proc": "LOOKUP",
+      "status": 0,
+      "name": "inside.txt",
+      "filehandle": "5753d509a20100000200000000000000",
+      "object_attributes": {
+        "type": 1,
+        "mode": 436,
+        "nlink": 1,
+        "uid": 1000,
+        "gid": 1000,
+        "size": 22,
+        "used": 22,
+        "fsid": 0,
+        "fileid": 2,
+        "atime": [
+          1795461262,
+          257279125
+        ],
+        "mtime": [
+          1795461262,
+          258421664
+        ],
+        "ctime": [
+          1795461262,
+          258421664
+        ]
+      },
+      "dir_attributes": {
+        "type": 2,
+        "mode": 493,
+        "nlink": 2,
+        "uid": 1000,
+        "gid": 1000,
+        "size": 0,
+        "used": 0,
+        "fsid": 0,
+        "fileid": 1,
+        "atime": [
+          1795461262,
+          285559099
+        ],
+        "mtime": [
+          1795461262,
+          285559099
+        ],
+        "ctime": [
+          1795461262,
+          285559099
+        ]
+      },
+      "request_sha256": "1bc91d6c3ad4760c1bf8dc57b2c7e59116ae522e9de65b1b086cce09a909ac08",
+      "response_sha256": "d1f67ef840918ad1983035c29e66cdc454c9f933fcfd9fba894e9fd332380dd6"
+    },
+    {
+      "proc": "READ",
+      "status": 0,
+      "count": 22,
+      "eof": true,
+      "data_utf8_preview": "V064-INSIDE-BASE-FILE\n",
+      "data_base64": "VjA2NC1JTlNJREUtQkFTRS1GSUxFCg==",
+      "data_sha256": "474d0bab0c355af0de809330ebdd151242bee6b86bc13d8c2af06581d3c713dc",
+      "file_attributes": {
+        "type": 1,
+        "mode": 436,
+        "nlink": 1,
+        "uid": 1000,
+        "gid": 1000,
+        "size": 22,
+        "used": 22,
+        "fsid": 0,
+        "fileid": 2,
+        "atime": [
+          1795461262,
+          257279125
+        ],
+        "mtime": [
+          1795461262,
+          258421664
+        ],
+        "ctime": [
+          1795461262,
+          258421664
+        ]
+      },
+      "request_sha256": "8aa3c82d4e3d80c59e01ca8267618b60a5c0449acfcae5f853e68664380f315f",
+      "response_sha256": "63d6bb539b3504df4639e6e24ede931a4314895f6749050c499e2c614ddd6f0c"
+    }
+  ],
+  "finished_utc": "2026-11-23T19:15:05.178683Z"
+}
