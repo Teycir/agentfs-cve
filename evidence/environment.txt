@@ -1,0 +1,15 @@
+UTC: 2026-11-23T18:16:07Z
+PWD: /home/teycir
+uname: Linux teycir-G5-KF5 6.14.0-37-generic #37~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 10:25:38 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+agentfs binary: /home/teycir/ResearchAIRedTeam/agentfs/cli/target/release/agentfs
+agentfs 0a014eb-dirty
+source commit: 0a014ebd4918615baff589ed17486e557e7c6a23
+source status:
+ M cli/Cargo.lock
+ M cli/Cargo.toml
+?? vendor/
+binary sha256:
+048742a16149c5d97cdd9bb3b265d26ce654cb5d35af0406c1cf6848317f9108  /home/teycir/ResearchAIRedTeam/agentfs/cli/target/release/agentfs
+listener:
+LISTEN 0      4096       127.0.0.1:11111      0.0.0.0:*    users:(("agentfs",pid=71223,fd=13))   
+  71223 teycir   lun. nov. 23 18:55:03 2026 /home/teycir/ResearchAIRedTeam/agentfs/cli/target/release/agentfs serve nfs labpoc --bind 127.0.0.1 --port 11111

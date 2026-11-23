@@ -1,0 +1,79 @@
+{
+  "started_utc": "2026-11-23T18:10:24.746065Z",
+  "host": "127.0.0.1",
+  "port": 11111,
+  "auth_unix_uid": 65534,
+  "auth_unix_gid": 65534,
+  "lookup_name": "../secret_600.txt",
+  "read_count": 128,
+  "steps": [
+    {
+      "proc": "MNT",
+      "status": 0,
+      "root_fh": "cd518c09a20100000100000000000000",
+      "request_sha256": "aeb5d3c87e14a511a930c55c21444667a2faa5d63b2965105e6e20cb632ceeb9",
+      "response_sha256": "c94083227ea12bb2dc1e99f39f11f6fee0c2879d0b07aa288dddeb7decf917a3"
+    },
+    {
+      "proc": "LOOKUP",
+      "status": 0,
+      "name": "../secret_600.txt",
+      "filehandle": "cd518c09a20100000600000000000000",
+      "object_attributes": {
+        "type": 1,
+        "mode": 384,
+        "nlink": 1,
+        "uid": 1000,
+        "gid": 1000,
+        "size": 32,
+        "used": 32,
+        "fsid": 0,
+        "fileid": 6,
+        "atime": [
+          1795457395,
+          410831064
+        ],
+        "mtime": [
+          1795457395,
+          411008116
+        ],
+        "ctime": [
+          1795457395,
+          410831064
+        ]
+      },
+      "dir_attributes": {
+        "type": 2,
+        "mode": 493,
+        "nlink": 3,
+        "uid": 1000,
+        "gid": 1000,
+        "size": 0,
+        "used": 0,
+        "fsid": 0,
+        "fileid": 1,
+        "atime": [
+          1795456495,
+          882136447
+        ],
+        "mtime": [
+          1795457395,
+          410831064
+        ],
+        "ctime": [
+          1795457395,
+          410831064
+        ]
+      },
+      "request_sha256": "19c0db3a0f7a829fc0baf43fe0017d3209a2f90789f80e87fc8538f3727c44ec",
+      "response_sha256": "1fe15b4819e9630025f0f84523f6238d39047a58d9b922329d3628f4e308fa8d"
+    },
+    {
+      "proc": "READ",
+      "status": 13,
+      "request_sha256": "d789204ee6282971dfa459a76ae1de761fd0663e1eee7016a038857958c60f94",
+      "response_sha256": "4111cae860818c97c4f1684bc69df1c3e9bab87053d0b2956e28629193603a6b"
+    }
+  ],
+  "finished_utc": "2026-11-23T18:10:24.749292Z"
+}

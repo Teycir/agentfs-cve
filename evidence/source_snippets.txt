@@ -1,0 +1,69 @@
+Relevant source excerpts — agentfs 0.6.4, commit 0a014ebd4918615baff589ed17486e557e7c6a23
+
+1) cli/src/cmd/nfs.rs:37-47 — overlay mode wraps HostFS(base) in OverlayFS and serves it over NFS:
+
+    let fs: Arc<Mutex<dyn FileSystem>> = if let Some(base_str) = base_path {
+        let hostfs = HostFS::new(&base_str).context("Failed to create HostFS")?;
+        let overlay = OverlayFS::new(Arc::new(hostfs), agentfs.fs);
+        overlay.load().await?; // Load persisted whiteouts and origin mappings
+
+        eprintln!("Mode: overlay (base: {})", base_str);
+        Arc::new(Mutex::new(overlay))
+    } else {
+        eprintln!("Mode: direct AgentFS");
+        Arc::new(Mutex::new(agentfs.fs))
+    };
+
+2) cli/src/nfsserve/nfs_handlers.rs:256-320 — LOOKUP deserializes client filename and calls vfs.lookup without path/name validation:
+
+    let mut dirops = nfs::diropargs3::default();
+    dirops.deserialize(input)?;
+    ...
+    if !permissions::can_execute(&context.auth, &dir_attr_full) { ... }
+    ...
+    match context.vfs.lookup(dirid, &dirops.name).await { ... }
+
+3) cli/src/nfs.rs:122-160 — AgentNFS::lookup forwards the network filename verbatim to FileSystem::lookup:
+
+    let name = std::str::from_utf8(filename).map_err(|_| nfsstat3::NFS3ERR_INVAL)?;
+    ...
+    let stats = fs
+        .lookup(id_to_fs_ino(dirid), name)
+        .await
+        .map_err(error_to_nfsstat)?
+        .ok_or(nfsstat3::NFS3ERR_NOENT)?;
+
+4) sdk/rust/src/filesystem/overlayfs.rs:632-708 — OverlayFS::lookup builds a display path but delegates the raw name to base.lookup:
+
+    let path = self.build_path(parent_ino, name)?;
+    ...
+    if let Some(base_stats) = self.base.lookup(base_parent_ino, name).await? {
+        let ino = self.get_or_create_overlay_ino(Layer::Base, base_stats.ino, &path);
+        let mut stats = base_stats;
+        stats.ino = ino;
+        return Ok(Some(stats));
+    }
+
+5) sdk/rust/src/filesystem/hostfs_linux.rs:342-392 — HostFS::lookup passes name directly to openat; O_NOFOLLOW applies only to the final component, so names containing ../ escape the base fd:
+
+    let c_name = CString::new(name).map_err(|_| FsError::InvalidPath)?;
+    let child_fd =
+        unsafe { libc::openat(parent_fd, c_name.as_ptr(), libc::O_PATH | libc::O_NOFOLLOW) };
+    ...
+    let (ino, _is_new) = self.get_or_create_inode(child_fd, &stat);
+
+6) cli/src/nfsserve/nfs_handlers.rs:368-427 — READ permission-checks the resolved inode then calls vfs.read; the resolved inode is the traversed host file:
+
+    if !permissions::can_read(&context.auth, &attr) { ... }
+    ...
+    match context.vfs.read(id, args.offset, args.count).await { ... }
+
+7) cli/src/nfsserve/permissions.rs:44-72 — AUTH_UNIX uid/gid are taken from the RPC credential; uid 0 bypasses mode checks:
+
+    if auth.uid == 0 {
+        return true;
+    }
+    ...
+    Permission::Read => (mode & read_bit) != 0,
+
+8) Write-path containment — overlayfs.rs:973-1044,1110-1294 — mkdir/create_file/mknod/symlink/unlink/rmdir/rename operate on self.delta (AgentFS/SQLite) after copy_up; HostFS write methods are not invoked for base-layer entries. This limits the demonstrated primitive to host read/stat, not host write/delete.

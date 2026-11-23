@@ -1,0 +1,105 @@
+{
+  "started_utc": "2026-11-23T18:05:28.217100Z",
+  "host": "127.0.0.1",
+  "port": 11111,
+  "lookup_name": "inside.txt",
+  "read_count": 64,
+  "steps": [
+    {
+      "proc": "MNT",
+      "status": 0,
+      "root_fh": "cd518c09a20100000100000000000000",
+      "request_sha256": "3f632cb047c6172c166f656a7d065dbff77cf87941312c097a4e1d360ebea84f",
+      "response_sha256": "c94083227ea12bb2dc1e99f39f11f6fee0c2879d0b07aa288dddeb7decf917a3"
+    },
+    {
+      "proc": "LOOKUP",
+      "status": 0,
+      "name": "inside.txt",
+      "filehandle": "cd518c09a20100000200000000000000",
+      "object_attributes": {
+        "type": 1,
+        "mode": 436,
+        "nlink": 1,
+        "uid": 1000,
+        "gid": 1000,
+        "size": 17,
+        "used": 17,
+        "fsid": 0,
+        "fileid": 2,
+        "atime": [
+          1795456520,
+          655015086
+        ],
+        "mtime": [
+          1795456520,
+          655206217
+        ],
+        "ctime": [
+          1795456520,
+          655015086
+        ]
+      },
+      "dir_attributes": {
+        "type": 2,
+        "mode": 493,
+        "nlink": 3,
+        "uid": 1000,
+        "gid": 1000,
+        "size": 0,
+        "used": 0,
+        "fsid": 0,
+        "fileid": 1,
+        "atime": [
+          1795456495,
+          882136447
+        ],
+        "mtime": [
+          1795456534,
+          988610002
+        ],
+        "ctime": [
+          1795456534,
+          988610002
+        ]
+      },
+      "request_sha256": "4aebce1b95d7a2075f711d213bc4e13d1899a9636276128205b50de99583ce2b",
+      "response_sha256": "ef3edbb140a47ed81f9cc0a3066abc4f04604ed84ec62b33850c1f62d5052737"
+    },
+    {
+      "proc": "READ",
+      "status": 0,
+      "count": 17,
+      "eof": true,
+      "data_utf8_preview": "INSIDE-BASE-FILE\n",
+      "data_base64": "SU5TSURFLUJBU0UtRklMRQo=",
+      "data_sha256": "634422c49cdcea0cdc24b2995fc4e589670b5e24e60f66ab6252b88b5282a939",
+      "file_attributes": {
+        "type": 1,
+        "mode": 436,
+        "nlink": 1,
+        "uid": 1000,
+        "gid": 1000,
+        "size": 17,
+        "used": 17,
+        "fsid": 0,
+        "fileid": 2,
+        "atime": [
+          1795456520,
+          655015086
+        ],
+        "mtime": [
+          1795456520,
+          655206217
+        ],
+        "ctime": [
+          1795456520,
+          655015086
+        ]
+      },
+      "request_sha256": "7626c3e57d7293ea823cfc864e10085b7d8c1aefa3a2a38265654386e9ba459f",
+      "response_sha256": "3b37c1c4057911697274f7d1a983cd8f52e2f8ac4b5c8330aba78cbd65dc3c48"
+    }
+  ],
+  "finished_utc": "2026-11-23T18:05:28.220228Z"
+}
