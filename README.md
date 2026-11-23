@@ -87,11 +87,22 @@ python3 pocs/nfs_crash.py --outdir out/crash --port 11111 --name ../huge_sparse.
     --server-pattern 'agentfs serve nfs'
 ```
 
-## Separate finding
+## Two distinct vulnerability candidates
 
-`agentfs serve mcp --tools` filters `tools/list` but `tools/call` dispatches
-hidden tools anyway (CWE-862, confirmed live). Documented in report §4.2;
-not part of this CVE pack.
+This engagement produced **two separate vulnerability candidates**, to be
+submitted independently — not bundled:
+
+| ID | Vulnerability | Severity | CVE potential |
+|---|---|---|---|
+| AFS-NFS-01 | NFS filesystem path traversal → arbitrary host file disclosure + server DoS | High (7.7) | Strong — this pack |
+| AFS-MCP-01 | MCP `--tools` allowlist bypass → unauthorized tool invocation | Low (3.1) | Possible, subject to CNA criteria |
+
+**AFS-NFS-01** is the primary submission: everything in this pack
+(`advisory.md`, PoCs, `evidence/`).
+
+**AFS-MCP-01** is documented in report §4.2 with evidence
+(`evidence/mcp_filter_bypass.*`); it has a different root cause, security
+boundary, and impact, and is excluded from the NFS advisory.
 
 ## Status
 
