@@ -106,5 +106,10 @@ boundary, and impact, and is excluded from the NFS advisory.
 
 ## Status
 
-Reported privately 2026-11-23. Awaiting vendor response / CVE assignment.
-Disclosure: private advisory; publication coordinated with the vendor, no fixed deadline.
+AFS-NFS-01 submitted privately via email to `security@turso.tech` on
+2026-11-23T20:40Z (attachment: `agentfs-cve-submission-20261123.zip`).
+The repo has no `SECURITY.md` and GitHub private vulnerability reporting
+is disabled — email is the published channel per
+`turso.tech/.well-known/security.txt`. Awaiting vendor response / CVE
+assignment. AFS-MCP-01 was not included in this submission.
+Disclosure: coordinated with the vendor, no fixed deadline.
