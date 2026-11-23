@@ -38,7 +38,7 @@ a full-file copy-up into the SQLite delta, giving an availability impact.
 ## Repo layout
 
 - `README.md` — this file
-- `report_20261123_181454.md` — full red-team report
+- `cve-submission/report_20261123_181454.md` — full red-team report (authoritative copy)
 - `pocs/` — raw ONC RPC Python clients (traversal, enum, db_read, exhaust, crash)
 - `evidence/` — record-marked RPC captures (`result.json` + `.record.bin`),
   wire dumps, source snippets, environment, `SHA256SUMS.txt`
