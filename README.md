@@ -108,7 +108,8 @@ boundary, and impact, and is excluded from the NFS advisory.
 
 AFS-NFS-01 submitted privately via email to `security@turso.tech` on
 2026-11-23T20:40Z (attachment: `agentfs-cve-submission-20261123.zip`).
-Auto-ack received as support ticket **TUR-277**. Awaiting security
+Auto-ack received as support ticket **TUR-277**; clarification reply sent
+2026-11-23T20:44Z requesting security-team routing. Awaiting security
 designated response / CVE assignment. The repo has no `SECURITY.md` and
 GitHub private vulnerability reporting is disabled — email is the
 published channel per `turso.tech/.well-known/security.txt`.
