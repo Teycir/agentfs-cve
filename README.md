@@ -72,7 +72,8 @@ truncate -s 128M /tmp/lab/big_sparse.bin   # outside export base
 python3 pocs/nfs_exhaust.py --outdir out/exhaust --port 11111 --name ../big_sparse.bin \
     --db /path/to/.agentfs/<export>.db --server-cmd-substr 'agentfs serve nfs'
 truncate -s 1T /tmp/lab/huge_sparse.bin    # WARNING: crashes the server
-python3 pocs/nfs_crash.py --outdir out/crash --port 11111 --name ../huge_sparse.bin
+python3 pocs/nfs_crash.py --outdir out/crash --port 11111 --name ../huge_sparse.bin \
+    --server-pattern 'agentfs serve nfs'
 ```
 
 ## Separate finding

@@ -1,14 +1,13 @@
 {
-  "started_utc": "2026-11-23T19:40:02.244998Z",
+  "started_utc": "2026-11-23T19:53:51.314940Z",
   "host": "127.0.0.1",
   "port": 11112,
   "name": "../crash_sparse.bin",
-  "server_alive_before": true,
   "steps": [
     {
       "proc": "MNT",
       "status": 0,
-      "elapsed_sec": 0.002
+      "elapsed_sec": 0.0
     },
     {
       "proc": "LOOKUP",
@@ -18,17 +17,27 @@
     },
     {
       "proc": "READ",
-      "elapsed_sec": 25.02,
+      "elapsed_sec": 39.311,
       "error": "EOFError: connection closed after 0/4 bytes"
     }
   ],
-  "liveness": [
+  "server_pids_before": [
+    115679,
+    115681,
+    115800
+  ],
+  "server_pid_before": 115679,
+  "port_open_before": true,
+  "server_pids_after": [
+    115800
+  ],
+  "server_pid_after_alive": false,
+  "new_server_pids": [],
+  "port_open_after": false,
+  "functional_probes": [
     {
-      "t_offset_sec": 25.12,
-      "server_alive": true,
-      "mnt_probe": "ConnectionRefusedError: [Errno 111] Connection refused"
+      "mnt": "ConnectionRefusedError: [Errno 111] Connection refused"
     }
   ],
-  "server_alive_after": true,
-  "finished_utc": "2026-11-23T19:40:29.431176Z"
+  "finished_utc": "2026-11-23T19:54:33.727543Z"
 }

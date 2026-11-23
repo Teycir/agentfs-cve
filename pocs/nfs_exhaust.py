@@ -43,9 +43,15 @@ def server_pid(substr):
     try:
         out = subprocess.check_output(["pgrep", "-f", substr],
                                       stderr=subprocess.DEVNULL)
-        return int(out.split()[0])
+        # exclude this process/parent: their cmdlines contain the pattern
+        skip = {os.getpid(), os.getppid()}
+        for tok in out.split():
+            pid = int(tok)
+            if pid not in skip:
+                return pid
     except (subprocess.CalledProcessError, ValueError, IndexError):
         return None
+    return None
 
 
 def rss_kb(pid):
