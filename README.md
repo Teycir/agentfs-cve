@@ -43,7 +43,7 @@ a full-file copy-up into the SQLite delta, giving an availability impact.
 - `evidence/` — record-marked RPC captures (`result.json` + `.record.bin`),
   wire dumps, source snippets, environment, `SHA256SUMS.txt`
 - `cve-submission/` — VulnCheck/GitHub-advisory pack:
-  - `advisory.md` — paste-ready advisory (120-day disclosure)
+  - `advisory.md` — paste-ready advisory (private coordinated disclosure)
   - `attack-path-simple.md` — plain-language narrative
   - `attacker-cost.md` — effort/exposure analysis
   - `range-verification.txt` — version scope + build notes
@@ -96,4 +96,4 @@ not part of this CVE pack.
 ## Status
 
 Reported privately 2026-11-23. Awaiting vendor response / CVE assignment.
-Disclosure deadline: 120 days from report (VulnCheck policy).
+Disclosure: private advisory; publication coordinated with the vendor, no fixed deadline.
