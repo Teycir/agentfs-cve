@@ -1,0 +1,86 @@
+{
+  "started_utc": "2026-11-23T18:33:23.401136Z",
+  "host": "127.0.0.1",
+  "port": 11111,
+  "uid": 0,
+  "gid": 0,
+  "host_file": "/tmp/opencode/agentfs-lab/esc_target.txt",
+  "host_sha256_before": "cdafe23b6c28e01e79a54641e63738414cb12070206d3996173ac4c5a3b9dc1f",
+  "steps": [
+    {
+      "proc": "mnt",
+      "nfs_proc": 1,
+      "status": 0,
+      "request_sha256": "3f632cb047c6172c166f656a7d065dbff77cf87941312c097a4e1d360ebea84f",
+      "response_sha256": "8dfe8dc147a5aa3b078f8c89ed0e10b4d2dbaf5dee708dcc1502d7b142f6a7cb"
+    },
+    {
+      "proc": "lookup",
+      "nfs_proc": 3,
+      "status": 0,
+      "request_sha256": "b374e64744dd4a265697176734f5c8a4e117dea6f59049507a96705c518d5f08",
+      "response_sha256": "cf020646950d7247a712f0122ee279f0122c39bae2a1001911f715e2f8d69894"
+    },
+    {
+      "proc": "write",
+      "nfs_proc": 7,
+      "status": 0,
+      "request_sha256": "2bd406771644f28894e400c64cbf6613d884494ff12eea802dbc259f191c0b26",
+      "response_sha256": "1220dce89026499ee8aa56d269b76bc7517d401074607abebf1a3fdf32443718"
+    },
+    {
+      "proc": "read",
+      "nfs_proc": 6,
+      "status": 0,
+      "request_sha256": "60a51a79f4b6aab5cc7f1ee53eacc4185dabe46255a42212004971ce6605889f",
+      "response_sha256": "ee00c8d7d8e4ae80a1c6d0087703ca88dea521d7cc029657d96eac7f581658bd"
+    },
+    {
+      "proc": "mkdir",
+      "nfs_proc": 9,
+      "status": 0,
+      "request_sha256": "83c8572102a65832132db95fab3cf7ca93c0b72cec3223788fe6666a31b4c5fb",
+      "response_sha256": "02bd459b5a0bd2a7e78690b2868005318244f144dbe35756ccad5a0d17657056"
+    },
+    {
+      "proc": "lookup_mkdir",
+      "nfs_proc": 3,
+      "status": 0,
+      "request_sha256": "9ca04cd37df03ee6378cb30c5f0240cb5ea14af3ee56e03f29cdb9ac4cbb4a44",
+      "response_sha256": "3d686689b5f08804b2608472c3e13dddf7dc41e3e1b5d4ec32f7a37cda93d387"
+    },
+    {
+      "proc": "remove",
+      "nfs_proc": 12,
+      "status": 0,
+      "request_sha256": "1871eb6fa2781532cea0b2006a885b8c5a9ae2c5bc4b508bb909e07a530c40b4",
+      "response_sha256": "9f88b191cba458ed4fa150f99ffc87382cf997c77292de94c7212abd25fe9b83"
+    },
+    {
+      "proc": "lookup_after_remove",
+      "nfs_proc": 3,
+      "status": 2,
+      "request_sha256": "b374e64744dd4a265697176734f5c8a4e117dea6f59049507a96705c518d5f08",
+      "response_sha256": "70a4b03ef6b7d8ff75886f160477614ce0fde92510b47c238780f8ca80c8f6a8"
+    }
+  ],
+  "lookup": {
+    "name": "../esc_target.txt",
+    "filehandle": "0649a909a20100000400000000000000",
+    "size": 28,
+    "mode": "0o644"
+  },
+  "read_after_write": {
+    "count": 28,
+    "eof": true,
+    "data": "NFS-WRITE-ESCALATION-TEST\nT\n",
+    "data_sha256": "814891ae29b83ab5899829999c4ca9722bc2df38c1d75fed655efcfff76baa0c"
+  },
+  "mkdir_status": 0,
+  "remove_status": 0,
+  "lookup_after_remove_status": 2,
+  "host_sha256_after": "cdafe23b6c28e01e79a54641e63738414cb12070206d3996173ac4c5a3b9dc1f",
+  "host_file_unchanged": true,
+  "host_file_content_after": "ESC-TARGET-ORIGINAL-CONTENT\n",
+  "finished_utc": "2026-11-23T18:33:23.405214Z"
+}
