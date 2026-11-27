@@ -38,14 +38,14 @@ vulnerable files.
 | 2026-11-23T20:40:10Z | Vendor report emailed to `security@turso.tech` (cc `info@turso.tech`) with `agentfs-cve-submission-20261123.zip` | [vendor .eml](disclosure/sent/20261123T204010Z-vendor-security-report-agentfs-nfs01.eml) · [contact log](disclosure/contact-log.md) |
 | 2026-11-23T20:41Z | Turso support auto-ack received as ticket `TUR-277` | [contact log](disclosure/contact-log.md) · [report disclosure timeline](cve-submission/report_20261123_181454.md#disclosure-timeline-utc) |
 | 2026-11-23T20:44Z | Clarification reply sent on `TUR-277` requesting security-team routing | [contact log](disclosure/contact-log.md) · [report disclosure timeline](cve-submission/report_20261123_181454.md#disclosure-timeline-utc) |
-| 2026-11-24T20:38:47Z | Report repository `Teycir/agentfs-cve` created public as the reproduction package | <https://github.com/Teycir/agentfs-cve> |
-| pending | VulnCheck submission for AFS-NFS-01 | [submission/vulncheck/timeline.md](submission/vulncheck/timeline.md) |
+| 2026-11-27T18:31:14Z | VulnCheck disclosure for AFS-NFS-01 — case `09cfc547-ec96-4c0f-a469-48823a8137b1` | [submission/vulncheck/timeline.md](submission/vulncheck/timeline.md) |
+| 2026-11-27T18:31:14Z | Report repository `Teycir/agentfs-cve` made public manually after VulnCheck submission | <https://github.com/Teycir/agentfs-cve> |
 
 ## Vulnerabilities found
 
 | ID | Vulnerability | Severity | CVSS 3.1 | Status |
 |---|---|---|---|---|
-| AFS-NFS-01 | NFSv3 overlay LOOKUP path escape → arbitrary host file disclosure + server DoS | High | 7.7 `CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H` | Vendor contacted 2026-11-23; VulnCheck pending |
+| AFS-NFS-01 | NFSv3 overlay LOOKUP path escape → arbitrary host file disclosure + server DoS | High | 7.7 `CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H` | Vendor contacted 2026-11-23; VulnCheck case 09cfc547 |
 | AFS-MCP-01 | MCP `--tools` allowlist filters discovery but not `tools/call` invocation | Low | 3.1 `CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N` | Confirmed; separate candidate, not in this submission |
 | — | OBS-01: `HostFS` mutating ops exist but are unreachable via overlay NFS | Informational | — | Hardening note |
 | — | OBS-02: `tcpdump` unavailable in lab (`CAP_NET_RAW`); record-level captures used | Informational | — | Environment note |
@@ -129,6 +129,7 @@ boundary, and impact, and is excluded from the NFS advisory.
 - `disclosure/contact-log.md` — authoritative contact log (Message-IDs, statuses, watch items)
 - `disclosure/sent/` — archived outbound `.eml` + `SHA256SUMS`
 - `submission/vulncheck/timeline.md` — VulnCheck-facing UTC timeline with direct artifact links
+- `submission/vulncheck/details-AFS-NFS-01.md` — paste-ready VulnCheck vulnerability details
 - `cve-submission/report_20261123_181454.md` — full red-team report (authoritative copy)
 - `pocs/` — raw ONC RPC Python clients (traversal, enum, db_read, exhaust, crash)
 - `evidence/` — record-marked RPC captures (`result.json` + `.record.bin`), wire dumps, source snippets, environment, `SHA256SUMS.txt`
@@ -189,7 +190,7 @@ python3 pocs/nfs_crash.py --outdir out/crash --port 11111 --name ../huge_sparse.
 | Tested binaries | build from source checked out at the `v0.6.4` tag: `agentfs v0.6.4-dirty`, sha256 `8abbf5f926f358739f0b600e185f6efd425eaaa89c07b0b2b573b44d2b16c0c4` (stable rustc 1.95.0, `--release --no-default-features`, build-only `branches-0.4.4` patch — see `range-verification.txt`); earlier `0a014eb-dirty` sha256 `048742a1…` |
 | Scope | Local source audit + live loopback NFSv3/MCP PoCs; non-destructive reads; lab-only writes |
 | Status | FINAL — AFS-NFS-01 confirmed on v0.6.4 tag source; AFS-MCP-01 confirmed |
-| Disclosure | AFS-NFS-01 submitted privately via email to `security@turso.tech` on 2026-11-23T20:40Z (package: `agentfs-cve-submission-20261123.zip`). Auto-ack received as support ticket **TUR-277**; clarification reply sent 2026-11-23T20:44Z requesting security-team routing. Repo public since 2026-11-24T20:38:47Z. VulnCheck submission pending. No fixed deadline committed; publication coordinated with the vendor/CNA. AFS-MCP-01 not included in this submission. |
+| Disclosure | AFS-NFS-01 submitted privately via email to `security@turso.tech` on 2026-11-23T20:40Z (package: `agentfs-cve-submission-20261123.zip`). Auto-ack received as support ticket **TUR-277**; clarification reply sent 2026-11-23T20:44Z requesting security-team routing. VulnCheck case `09cfc547-ec96-4c0f-a469-48823a8137b1` recorded 2026-11-27T18:31:14Z; repo made public manually after VulnCheck submission. No fixed deadline committed; publication coordinated with the vendor/CNA. AFS-MCP-01 not included in this submission. |
 
 ## Disclosure status
 
@@ -197,7 +198,7 @@ AFS-NFS-01 was submitted privately via email to `security@turso.tech` on
 2026-11-23T20:40Z (attachment: `agentfs-cve-submission-20261123.zip`).
 Auto-ack received as support ticket **TUR-277**; clarification reply sent
 2026-11-23T20:44Z requesting security-team routing. Awaiting security
-designated response / CVE assignment. The repo has no `SECURITY.md` and
+designated response / CVE assignment. VulnCheck case `09cfc547-ec96-4c0f-a469-48823a8137b1` recorded 2026-11-27T18:31:14Z; repo made public manually after VulnCheck submission. The repo has no `SECURITY.md` and
 GitHub private vulnerability reporting is disabled — email is the
 published channel per `turso.tech/.well-known/security.txt`.
 AFS-MCP-01 was not included in this submission.
