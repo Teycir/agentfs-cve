@@ -36,8 +36,8 @@ vulnerable files.
 | 2026-11-23T18:05:28Z–19:16:49Z | PoC verification on `agentfs` built from upstream `v0.6.4` tag source: traversal, absolute path, mode-600 uid spoof, enumeration, DB/WAL read, copy-up exhaustion | [report](cve-submission/report_20261123_181454.md) · [evidence/captures](evidence/captures/) |
 | 2026-11-23T20:05:57Z–20:06:18Z | Listener-correlated kernel OOM kill of the `agentfs serve nfs` PID after 1-byte READ of a 1 TB sparse file | [v064-crash-oom](evidence/captures/v064-crash-oom/) |
 | 2026-11-23T20:40:10Z | Vendor report emailed to `security@turso.tech` (cc `info@turso.tech`) with `agentfs-cve-submission-20261123.zip` | [vendor .eml](disclosure/sent/20261123T204010Z-vendor-security-report-agentfs-nfs01.eml) · [contact log](disclosure/contact-log.md) |
-| 2026-11-23T20:41Z | Turso support auto-ack received as ticket `TUR-277` | [contact log](disclosure/contact-log.md) · [report disclosure timeline](cve-submission/report_20261123_181454.md#disclosure-timeline-utc) — raw `.eml` not archived yet |
-| 2026-11-23T20:44Z | Clarification reply sent on `TUR-277` requesting security-team routing | [contact log](disclosure/contact-log.md) · [report disclosure timeline](cve-submission/report_20261123_181454.md#disclosure-timeline-utc) — raw `.eml` not archived yet |
+| 2026-11-23T20:41Z | Turso support auto-ack received as ticket `TUR-277` | [contact log](disclosure/contact-log.md) · [report disclosure timeline](cve-submission/report_20261123_181454.md#disclosure-timeline-utc) |
+| 2026-11-23T20:44Z | Clarification reply sent on `TUR-277` requesting security-team routing | [contact log](disclosure/contact-log.md) · [report disclosure timeline](cve-submission/report_20261123_181454.md#disclosure-timeline-utc) |
 | 2026-11-24T20:38:47Z | Report repository `Teycir/agentfs-cve` created public as the reproduction package | <https://github.com/Teycir/agentfs-cve> |
 | pending | VulnCheck submission for AFS-NFS-01 | [submission/vulncheck/timeline.md](submission/vulncheck/timeline.md) |
 
